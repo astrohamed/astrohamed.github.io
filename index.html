@@ -1,27 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hamed Zare - Astrophysics Researcher</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hamed Zare — Astrophysicist</title>
+  <meta name="description" content="Hamed Zare (UCM PhD). JWST & HST studies of HII regions and star clusters in PHANGS galaxies, with dedicated Paschen-alpha (Paα) mapping." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --fg:#e6f0ff;
+      --muted:#8aa0b3;
+      --accent:#48b7a7;
+      --panel:#0f1620;
+      --link:#6dd3c6;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --maxw: 1120px;
+    }
+    html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; color:var(--fg); background:var(--bg)}
+    .nav{position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:14px 22px; backdrop-filter:saturate(180%) blur(10px); background:rgba(11,15,20,.55); border-bottom:1px solid rgba(255,255,255,.06)}
+    .brand{font-weight:800; letter-spacing:.5px}
+    .brand small{color:var(--muted); font-weight:600}
+    .nav a{color:var(--fg); text-decoration:none; margin-left:18px; font-weight:600; opacity:.85}
+    .nav a:hover{opacity:1; color:var(--link)}
+    .menu-btn{display:none; background:none; border:0; color:var(--fg); font-size:26px}
+    .hero{position:relative; min-height:78vh; display:grid; place-items:center; text-align:center; background:#000 url('assets/phangs-galaxy.jpg') center/cover fixed no-repeat}
+    .hero::after{content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(11,15,20,.75), rgba(11,15,20,.25))}
+    .hero-inner{position:relative; z-index:1; padding:120px 20px 60px}
+    .kicker{color:var(--muted); text-transform:uppercase; letter-spacing:.2em; font-size:.9rem}
+    h1{margin:.35em 0 .2em; font-size: clamp(2rem, 6vw, 3.6rem)}
+    .subtitle{color:#cfe7ff; font-size:clamp(1rem, 2.4vw, 1.2rem)}
+    .cta{display:inline-block; margin-top:22px; padding:12px 18px; border-radius:999px; background:var(--accent); color:#052b26; font-weight:800; text-decoration:none; box-shadow:var(--shadow)}
+    section{padding:80px 20px}
+    .container{max-width:var(--maxw); margin:0 auto}
+    h2{font-size:clamp(1.6rem, 3vw, 2.1rem); margin:0 0 20px}
+    p{line-height:1.7; color:#d6e6ff}
+    .two-col{display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:center}
+    .card{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .card.pad{padding:26px}
+    .img{border-radius:var(--radius); box-shadow:var(--shadow); width:100%; height:auto}
+    .tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+    .tile{padding:22px; background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius)}
+    .tile h3{margin:0 0 6px; font-size:1.05rem}
+    .tile p{color:#cfe7ff; font-size:.95rem}
+    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .gallery figure{margin:0}
+    .gallery img{width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .gallery figcaption{font-size:.88rem; color:var(--muted); margin-top:6px}
+    footer{padding:40px 20px 70px; border-top:1px solid rgba(255,255,255,.08); background:#0a0f15}
+    .foot{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:var(--maxw); margin:0 auto}
+    .chip{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:24px}
+    .muted{color:var(--muted); font-size:.95rem}
+    .center{text-align:center}
+    @media (max-width: 900px){.two-col{grid-template-columns:1fr}.tiles{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.foot{grid-template-columns:1fr}.nav-links{display:none}.menu-btn{display:block}}
+  </style>
 </head>
 <body>
-  <img src="profile.jpeg" alt="Hamed Zare" style="width:160px; border-radius:50%; display:block; margin:20px auto;">
-  <h1>Hamed Zare</h1>
-  <h2>PhD Student in Astrophysics</h2>
-  <p>
-    Welcome! I am a PhD student and researcher at Universidad Complutense de Madrid. My interests include galaxy evolution, dust attenuation, star formation, and astronomical data science.
-  </p>
-  <h3>Contact</h3>
-  <ul>
-    <li>Email: <a href="mailto:hzare@ucm.es">hzare@ucm.es</a></li>
-    <li>GitHub: <a href="https://github.com/astrohamed">astrohamed</a></li>
-  </ul>
-  <h3>Research Interests</h3>
-  <ul>
-    <li>Star formation in galaxies</li>
-    <li>Dust attenuation and emission</li>
-    <li>Data science in astronomy</li>
-    <li>Extragalactic astrophysics</li>
-  </ul>
+  <nav class="nav">
+    <div class="brand">Hamed Zare <small>• Universidad Complutense de Madrid</small></div>
+    <button aria-label="Menu" class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#paa">Paα</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">PHANGS Galaxies • JWST & HST</div>
+      <h1>Hamed Zare</h1>
+      <p class="subtitle">PhD Student at Universidad Complutense de Madrid</p>
+      <a class="cta" href="#about">More</a>
+    </div>
+  </header>
+  <section id="about">
+    <div class="container two-col">
+      <div class="card pad">
+        <h2>About</h2>
+        <p>I am a PhD student at the Universidad Complutense de Madrid, working with high-level JWST and HST data to understand the formation and evolution of HII regions and star clusters in PHANGS galaxies.</p>
+        <p class="muted">My research bridges detailed observations from PHANGS with physical models to reveal how stars and clusters form and evolve within galactic environments.</p>
+      </div>
+      <img class="img" src="assets/profile.jpg" alt="Portrait of Hamed Zare" />
+    </div>
+  </section>
+  <section id="research">
+    <div class="container">
+      <h2>Research</h2>
+      <p>My work focuses on connecting stellar feedback, gas dynamics, and cluster evolution in nearby galaxies using multi-wavelength data from PHANGS-HST and PHANGS-JWST.</p>
+      <div class="tiles" style="margin-top:18px">
+        <div class="tile">
+          <h3>Observations</h3>
+          <p>Utilizing JWST and HST imaging to study ionized gas and star cluster populations in detail.</p>
+        </div>
+        <div class="tile">
+          <h3>Modeling</h3>
+          <p>Applying physical models to link observed properties with underlying star formation processes.</p>
+        </div>
+        <div class="tile">
+          <h3>Data & Tools</h3>
+          <p>Python, Astropy, photutils, and JWST pipeline tools, along with custom analysis scripts for PHANGS data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="paa">
+    <div class="container">
+      <h2>Paschen‑α (Paα) Studies</h2>
+      <div class="two-col">
+        <div class="card pad">
+          <p><strong>Goal:</strong> build pure, extinction‑resilient Paα maps to trace massive star formation in HII regions, then connect line fluxes to cluster ages and feedback.</p>
+          <p><strong>Data:</strong> JWST/NIRCam F187N (Paα), with continuum anchors F150W and F300M; optional HST Hα for comparison.</p>
+          <p><strong>Workflow (overview):</strong></p>
+          <ul>
+            <li>Destriping and background modeling of L2 <em>tweakback</em> exposures; mosaic to MJy/sr.</li>
+            <li>PSF match F150W and F300M to F187N; interpolate continuum at 1.875 μm.</li>
+            <li>Continuum subtraction with color term and throughput/bandwidth corrections.</li>
+            <li>Photometric conversion from MJy/sr → erg s⁻¹ cm⁻² using filter profiles; create uncertainty and quality masks.</li>
+            <li>HII region photometry via PHANGS masks; derive attenuation by comparing Paα to Hα.</li>
+            <li>Products: Paα map, σ map, mask, and ΣSFR maps at matched resolution.</li>
+          </ul>
+          <p class="muted">This pipeline follows PHANGS-JWST best practices (destriping, continuum interpolation, anchoring) with custom QA for residuals and diffuse emission.</p>
+        </div>
+        <img class="img" src="assets/paa-workflow.jpg" alt="Paα processing schematic" />
+      </div>
+      <h3 style="margin-top:28px">Example Maps</h3>
+      <div class="gallery" aria-label="Paα gallery">
+        <figure>
+          <img src="assets/ngc1433_paa.jpg" alt="NGC 1433 Paα map" />
+          <figcaption>NGC 1433 — Paα map with PHANGS HII masks.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ic5332_paa.jpg" alt="IC 5332 Paα map" />
+          <figcaption>IC 5332 — diffuse Paα emission and compact HII regions.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ngc628_paa.jpg" alt="NGC 628 Paα map" />
+          <figcaption>NGC 628 — comparison fields for attenuation study.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section id="publications">
+    <div class="container">
+      <h2>Publications</h2>
+      <ul class="pubs">
+        <li><strong>In preparation:</strong> Hα/Paα as a Window into Extinction and Star Cluster Evolution in Resolved Galactic Environments</li>
+        <li><a href="#">Full list of publications</a></li>
+      </ul>
+    </div>
+  </section>
+  <footer id="contact">
+    <div class="foot">
+      <div class="chip">
+        <h3>Address</h3>
+        <div class="muted">Facultad de Ciencias Físicas<br>Universidad Complutense de Madrid<br>Plaza de las Ciencias, 1, 28040 Madrid, Spain</div>
+      </div>
+      <div class="chip">
+        <h3>Email</h3>
+        <div><a href="mailto:hzare@ucm.es" class="muted">hzare@ucm.es</a></div>
+      </div>
+    </div>
+    <p class="center muted" style="margin-top:28px">© <span id="year"></span> Hamed Zare · Built with vanilla HTML/CSS · Hosted on GitHub Pages</p>
+  </footer>
+  <script>
+    function toggleMenu(){const links=document.getElementById('navLinks');const isShown=getComputedStyle(links).display!=='none';links.style.display=isShown?'none':'block'}
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {document.querySelector('.hero').style.backgroundAttachment='scroll'}
+  </script>
 </body>
 </html>
