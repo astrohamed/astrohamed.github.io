@@ -48,16 +48,12 @@
     .tile{padding:22px; background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius)}
     .tile h3{margin:0 0 6px; font-size:1.05rem}
     .tile p{color:#cfe7ff; font-size:.95rem}
-    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-    .gallery figure{margin:0}
-    .gallery img{width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow)}
-    .gallery figcaption{font-size:.88rem; color:var(--muted); margin-top:6px}
     footer{padding:40px 20px 70px; border-top:1px solid rgba(255,255,255,.08); background:#0a0f15}
     .foot{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:var(--maxw); margin:0 auto}
     .chip{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:24px}
     .muted{color:var(--muted); font-size:.95rem}
     .center{text-align:center}
-    @media (max-width: 900px){.two-col{grid-template-columns:1fr}.tiles{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.foot{grid-template-columns:1fr}.nav-links{display:none}.menu-btn{display:block}}
+    @media (max-width: 900px){.two-col{grid-template-columns:1fr}.tiles{grid-template-columns:1fr}.foot{grid-template-columns:1fr}.nav-links{display:none}.menu-btn{display:block}}
   </style>
 </head>
 <body>
@@ -67,7 +63,6 @@
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#research">Research</a>
-      <a href="#paa">Paα</a>
       <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
     </div>
@@ -107,26 +102,6 @@
           <h3>Data & Tools</h3>
           <p>Python, Astropy, photutils, and JWST pipeline tools, along with custom analysis scripts for PHANGS data.</p>
         </div>
-      </div>
-    </div>
-  </section>
-  <section id="paa">
-    <div class="container">
-      <h2>Paschen‑α (Paα) Studies</h2>
-      <h3 style="margin-top:28px">Example Maps</h3>
-      <div class="gallery" aria-label="Paα gallery">
-        <figure>
-          <img src="assets/ngc1433_paa.jpg" alt="NGC 1433 Paα map" />
-          <figcaption>NGC 1433 — Paα map with PHANGS HII masks.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/ic5332_paa.jpg" alt="IC 5332 Paα map" />
-          <figcaption>IC 5332 — diffuse Paα emission and compact HII regions.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/ngc628_paa.jpg" alt="NGC 628 Paα map" />
-          <figcaption>NGC 628 — comparison fields for attenuation study.</figcaption>
-        </figure>
       </div>
     </div>
   </section>
