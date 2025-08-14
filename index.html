@@ -10,54 +10,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0f14;
-      --fg:#e6f0ff;
-      --muted:#8aa0b3;
-      --accent:#48b7a7;
-      --panel:#0f1620;
-      --link:#6dd3c6;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
-      --maxw: 1120px;
+      --bg:#0b0f14; --fg:#e6f0ff; --muted:#8aa0b3; --accent:#48b7a7;
+      --panel:#0f1620; --link:#6dd3c6; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px; --maxw:1120px;
     }
-    html{scroll-behavior:smooth}
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; color:var(--fg); background:var(--bg)}
+
+    /* NAV */
     .nav{position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:14px 22px; backdrop-filter:saturate(180%) blur(10px); background:rgba(11,15,20,.55); border-bottom:1px solid rgba(255,255,255,.06)}
     .brand{font-weight:800; letter-spacing:.5px}
     .brand small{color:var(--muted); font-weight:600}
     .nav a{color:var(--fg); text-decoration:none; margin-left:18px; font-weight:600; opacity:.85}
     .nav a:hover{opacity:1; color:var(--link)}
     .menu-btn{display:none; background:none; border:0; color:var(--fg); font-size:26px}
-    .hero{position:relative; min-height:78vh; display:grid; place-items:center; text-align:center; background:#000 url('assets/phangs-galaxy.jpg') center/cover fixed no-repeat}
+
+    /* HERO */
+    .hero{position:relative; min-height:78vh; display:grid; place-items:center; text-align:center; background:#000 url('phangs-galaxy.jpg') center/cover fixed no-repeat}
     .hero::after{content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(11,15,20,.75), rgba(11,15,20,.25))}
     .hero-inner{position:relative; z-index:1; padding:120px 20px 60px}
     .kicker{color:var(--muted); text-transform:uppercase; letter-spacing:.2em; font-size:.9rem}
-    h1{margin:.35em 0 .2em; font-size: clamp(2rem, 6vw, 3.6rem)}
-    .subtitle{color:#cfe7ff; font-size:clamp(1rem, 2.4vw, 1.2rem)}
+    h1{margin:.35em 0 .2em; font-size:clamp(2rem,6vw,3.6rem)}
+    .subtitle{color:#cfe7ff; font-size:clamp(1rem,2.4vw,1.2rem)}
     .cta{display:inline-block; margin-top:22px; padding:12px 18px; border-radius:999px; background:var(--accent); color:#052b26; font-weight:800; text-decoration:none; box-shadow:var(--shadow)}
+
+    /* LAYOUT */
     section{padding:80px 20px}
     .container{max-width:var(--maxw); margin:0 auto}
-    h2{font-size:clamp(1.6rem, 3vw, 2.1rem); margin:0 0 20px}
+    h2{font-size:clamp(1.6rem,3vw,2.1rem); margin:0 0 20px}
     p{line-height:1.7; color:#d6e6ff}
     .two-col{display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:center}
     .card{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); box-shadow:var(--shadow)}
     .card.pad{padding:26px}
     .img{border-radius:var(--radius); box-shadow:var(--shadow); width:100%; height:auto}
+
     .tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
     .tile{padding:22px; background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius)}
     .tile h3{margin:0 0 6px; font-size:1.05rem}
     .tile p{color:#cfe7ff; font-size:.95rem}
+
+    /* Footer */
     footer{padding:40px 20px 70px; border-top:1px solid rgba(255,255,255,.08); background:#0a0f15}
     .foot{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:var(--maxw); margin:0 auto}
     .chip{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:24px}
     .muted{color:var(--muted); font-size:.95rem}
     .center{text-align:center}
-    @media (max-width: 900px){.two-col{grid-template-columns:1fr}.tiles{grid-template-columns:1fr}.foot{grid-template-columns:1fr}.nav-links{display:none}.menu-btn{display:block}}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .two-col{grid-template-columns:1fr}
+      .tiles{grid-template-columns:1fr}
+      .foot{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .menu-btn{display:block}
+    }
   </style>
 </head>
 <body>
-  <nav class="nav">
+  <!-- NAVBAR -->
+  <nav class="nav" role="navigation">
     <div class="brand">Hamed Zare <small>• Universidad Complutense de Madrid</small></div>
     <button aria-label="Menu" class="menu-btn" onclick="toggleMenu()">☰</button>
     <div class="nav-links" id="navLinks">
@@ -67,7 +79,9 @@
       <a href="#contact">Contact</a>
     </div>
   </nav>
-  <header class="hero">
+
+  <!-- HERO -->
+  <header class="hero" role="banner" aria-label="JWST+HST PHANGS galaxy background">
     <div class="hero-inner">
       <div class="kicker">PHANGS Galaxies • JWST & HST</div>
       <h1>Hamed Zare</h1>
@@ -75,63 +89,79 @@
       <a class="cta" href="#about">More</a>
     </div>
   </header>
-  <section id="about">
+
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-h">
     <div class="container two-col">
       <div class="card pad">
-        <h2>About</h2>
+        <h2 id="about-h">About</h2>
         <p>I am a PhD student at the Universidad Complutense de Madrid, working with high-level JWST and HST data to understand the formation and evolution of HII regions and star clusters in PHANGS galaxies.</p>
         <p class="muted">My research bridges detailed observations from PHANGS with physical models to reveal how stars and clusters form and evolve within galactic environments.</p>
       </div>
-     <img class="img" src="profile.jpg" alt="Portrait of Hamed Zare" />
+      <img class="img" src="profile.jpeg" alt="Portrait of Hamed Zare" />
     </div>
   </section>
-  <section id="research">
+
+  <!-- RESEARCH -->
+  <section id="research" aria-labelledby="research-h">
     <div class="container">
-      <h2>Research</h2>
-      <p>My work focuses on connecting stellar feedback, gas dynamics, and cluster evolution in nearby galaxies using multi-wavelength data from PHANGS-HST and PHANGS-JWST.</p>
+      <h2 id="research-h">Research</h2>
+      <p>My work focuses on connecting stellar feedback, gas dynamics, and cluster evolution in nearby galaxies using multi‑wavelength data from PHANGS‑HST and PHANGS‑JWST.</p>
       <div class="tiles" style="margin-top:18px">
         <div class="tile">
           <h3>Observations</h3>
-          <p>Utilizing JWST and HST imaging to study ionized gas and star cluster populations in detail.</p>
+          <p>JWST and HST imaging and narrow‑band mapping to study ionized gas and star cluster populations.</p>
         </div>
         <div class="tile">
           <h3>Modeling</h3>
-          <p>Applying physical models to link observed properties with underlying star formation processes.</p>
+          <p>Connecting observed line emission and photometry to physical conditions and evolutionary stages.</p>
         </div>
         <div class="tile">
           <h3>Data & Tools</h3>
-          <p>Python, Astropy, photutils, and JWST pipeline tools, along with custom analysis scripts for PHANGS data.</p>
+          <p>Python, Astropy, photutils, and JWST pipeline tools; reproducible notebooks and scripts.</p>
         </div>
       </div>
     </div>
   </section>
-  <section id="publications">
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" aria-labelledby="pubs-h">
     <div class="container">
-      <h2>Publications</h2>
+      <h2 id="pubs-h">Publications</h2>
       <ul class="pubs">
         <li><strong>In preparation:</strong> Hα/Paα as a Window into Extinction and Star Cluster Evolution in Resolved Galactic Environments</li>
         <li><a href="#">Full list of publications</a></li>
       </ul>
     </div>
   </section>
+
+  <!-- CONTACT / FOOTER -->
   <footer id="contact">
     <div class="foot">
       <div class="chip">
-        <h3>Address</h3>
+        <h3 style="margin:0 0 8px">Address</h3>
         <div class="muted">Facultad de Ciencias Físicas<br>Universidad Complutense de Madrid<br>Plaza de las Ciencias, 1, 28040 Madrid, Spain</div>
       </div>
       <div class="chip">
-        <h3>Email</h3>
+        <h3 style="margin:0 0 8px">Email</h3>
         <div><a href="mailto:hzare@ucm.es" class="muted">hzare@ucm.es</a></div>
       </div>
     </div>
     <p class="center muted" style="margin-top:28px">© <span id="year"></span> Hamed Zare · Built with vanilla HTML/CSS · Hosted on GitHub Pages</p>
-    <p class="center muted" style="margin-top:8px">Image Credit: NASA / ESA / CSA / Judy Schmidt — JWST+HST NGC 7496</p>
+    <p class="center muted" style="margin-top:8px">Image Credit (background): NASA / ESA / CSA / Judy Schmidt — JWST+HST NGC 7496</p>
   </footer>
+
   <script>
-    function toggleMenu(){const links=document.getElementById('navLinks');const isShown=getComputedStyle(links).display!=='none';links.style.display=isShown?'none':'block'}
-    document.getElementById('year').textContent = new Date().getFullYear();
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {document.querySelector('.hero').style.backgroundAttachment='scroll'}
+    function toggleMenu(){
+      const links=document.getElementById('navLinks');
+      const isShown=getComputedStyle(links).display!=='none';
+      links.style.display=isShown?'none':'block';
+    }
+    document.getElementById('year').textContent=new Date().getFullYear();
+    // Fallback for iOS where background-attachment: fixed can be janky
+    const hero=document.querySelector('.hero');
+    const iOS=/iP(hone|od|ad)/.test(navigator.platform) || (navigator.userAgent.includes('Mac') && 'ontouchend' in document);
+    if(iOS){hero.style.backgroundAttachment='scroll'}
   </script>
 </body>
 </html>
