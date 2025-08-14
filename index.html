@@ -113,23 +113,6 @@
   <section id="paa">
     <div class="container">
       <h2>Paschen‑α (Paα) Studies</h2>
-      <div class="two-col">
-        <div class="card pad">
-          <p><strong>Goal:</strong> build pure, extinction‑resilient Paα maps to trace massive star formation in HII regions, then connect line fluxes to cluster ages and feedback.</p>
-          <p><strong>Data:</strong> JWST/NIRCam F187N (Paα), with continuum anchors F150W and F300M; optional HST Hα for comparison.</p>
-          <p><strong>Workflow (overview):</strong></p>
-          <ul>
-            <li>Destriping and background modeling of L2 <em>tweakback</em> exposures; mosaic to MJy/sr.</li>
-            <li>PSF match F150W and F300M to F187N; interpolate continuum at 1.875 μm.</li>
-            <li>Continuum subtraction with color term and throughput/bandwidth corrections.</li>
-            <li>Photometric conversion from MJy/sr → erg s⁻¹ cm⁻² using filter profiles; create uncertainty and quality masks.</li>
-            <li>HII region photometry via PHANGS masks; derive attenuation by comparing Paα to Hα.</li>
-            <li>Products: Paα map, σ map, mask, and ΣSFR maps at matched resolution.</li>
-          </ul>
-          <p class="muted">This pipeline follows PHANGS-JWST best practices (destriping, continuum interpolation, anchoring) with custom QA for residuals and diffuse emission.</p>
-        </div>
-        <img class="img" src="assets/paa-workflow.jpg" alt="Paα processing schematic" />
-      </div>
       <h3 style="margin-top:28px">Example Maps</h3>
       <div class="gallery" aria-label="Paα gallery">
         <figure>
